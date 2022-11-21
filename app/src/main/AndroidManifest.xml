@@ -19,6 +19,13 @@
         android:theme="@style/Theme.ECommerceApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.RegistrarUsuarioActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.InicioActivity"
             android:label="@string/title_activity_inicio"
             android:theme="@style/Theme.ECommerceApp.NoActionBar" />
@@ -29,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

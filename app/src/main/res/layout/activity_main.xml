@@ -37,8 +37,10 @@
             android:fontFamily="@font/san_francisco"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/purple_500"
             android:gravity="center|center_horizontal"
-            android:text="@string/label_bienvenida"/>
+            android:text="@string/label_bienvenida"
+            tools:ignore="DuplicateIds" />
     </LinearLayout>
 
     <LinearLayout

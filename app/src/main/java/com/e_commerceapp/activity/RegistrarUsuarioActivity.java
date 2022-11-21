@@ -1,5 +1,12 @@
 package com.e_commerceapp.activity;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.lifecycle.ViewModelProvider;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,17 +27,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.lifecycle.ViewModelProvider;
-
 import com.e_commerceapp.R;
 import com.e_commerceapp.entity.service.Cliente;
 import com.e_commerceapp.entity.service.DocumentoAlmacenado;
 import com.e_commerceapp.entity.service.Usuario;
+import com.e_commerceapp.viewmodel.ClienteViewModel;
+import com.e_commerceapp.viewmodel.DocumentoAlmacenadoViewModel;
 import com.e_commerceapp.viewmodel.UsuarioViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -46,7 +48,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
 public class RegistrarUsuarioActivity extends AppCompatActivity {
-    /*private File f;
+    private File f;
     private ClienteViewModel clienteViewModel;
     private UsuarioViewModel usuarioViewModel;
     private DocumentoAlmacenadoViewModel documentoAlmacenadoViewModel;
@@ -537,5 +539,5 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(view);
         toast.show();
-    }*/
+    }
 }
