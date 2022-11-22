@@ -100,7 +100,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_toEndOf="@+id/txtNameAmount"
                         android:fontFamily="@font/san_francisco"
-                        android:text="S/. 3500.00"
+                        android:text="$20.000"
                         android:textColor="#F4EDED"
                         android:textSize="15sp" />
                 </RelativeLayout>

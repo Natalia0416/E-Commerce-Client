@@ -85,7 +85,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_toEndOf="@+id/txtNamePlatillo"
                         android:fontFamily="@font/san_francisco"
-                        android:text="Seco de Cabrito"
+                        android:text="Cafe"
                         android:textColor="#F4EDED"
                         android:textSize="15sp" />
                 </RelativeLayout>
@@ -139,7 +139,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_toEndOf="@+id/txtNamePricePlatillo"
                         android:fontFamily="@font/san_francisco"
-                        android:text="S/. 25.00"
+                        android:text="$4.000"
                         android:textColor="#F4EDED"
                         android:textSize="15sp" />
                 </RelativeLayout>

@@ -55,7 +55,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:fontFamily="@font/san_francisco"
-                        android:text="Seco de Cabrito"
+                        android:text="Mil Hojas"
                         android:textColor="#302E2E"
                         android:textSize="18sp"
                         android:textStyle="bold" />
