@@ -14,6 +14,7 @@ import com.e_commerceapp.R;
 import com.e_commerceapp.api.ConfigApi;
 import com.e_commerceapp.databinding.ActivityInicioBinding;
 import com.e_commerceapp.entity.service.Usuario;
+import com.e_commerceapp.utils.Carrito;
 import com.e_commerceapp.utils.DateSerializer;
 import com.e_commerceapp.utils.TimeSerializer;
 import com.google.android.material.badge.BadgeDrawable;
@@ -86,24 +87,27 @@ public class InicioActivity extends AppCompatActivity {
             case R.id.cerrarSesion:
                 this.logout();
                 break;
+            case R.id.bolsaCompras:
+                this.mostrarBolsa();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
-/*
+
     private void mostrarBolsa() {
         Intent i = new Intent(this, PlatillosCarritoActivity.class);
         startActivity(i);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
     }
-*/
+
     @Override
     protected void onStart() {
         super.onStart();
         loadData();
     }
 
-    private void loadData(){
-
+    @SuppressLint("UnsafeExperimentalUsageError")
+    private void loadData() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         final Gson g = new GsonBuilder()
                 .registerTypeAdapter(Date.class, new DateSerializer())
@@ -126,13 +130,9 @@ public class InicioActivity extends AppCompatActivity {
                     .error(R.drawable.insertar_imagen)
                     .into(imgFoto);
         }
-
-
-        /*BadgeDrawable badgeDrawable = BadgeDrawable.create(this);
+        BadgeDrawable badgeDrawable = BadgeDrawable.create(this);
         badgeDrawable.setNumber(Carrito.getDetallePedidos().size());
-        BadgeUtils.attachBadgeDrawable(badgeDrawable, findViewById(R.id.toolbar), R.id.bolsaCompras);*/
-
-
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, findViewById(R.id.toolbar), R.id.bolsaCompras);
     }
 
     //Método para cerrar sesión
