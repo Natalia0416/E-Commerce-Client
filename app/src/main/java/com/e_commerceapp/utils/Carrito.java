@@ -16,7 +16,7 @@ public class Carrito {
             if (dp.getPlatillo().getId() == detallePedido.getPlatillo().getId()) {
                 detallePedidos.set(index, detallePedido);
                 b = true;
-                return "El platillo ha sido agregado al carrito, se actualizará la cantidad";
+                return "El platillo ha sido agregado al carrito";
             }
             index++;
         }

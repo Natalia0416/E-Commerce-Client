@@ -115,7 +115,7 @@ public class MisComprasFragment extends Fragment implements Communication, Anula
                         File path = requireContext().getExternalFilesDir("/pedidos");
                         if (!path.exists()) {
                             folderCreated = false;
-                            Toast.makeText(requireContext(), "No se pudo crear la carpeta para guardar los archivos, sorry", Toast.LENGTH_LONG);
+                            Toast.makeText(requireContext(), "No se pudo crear la carpeta para guardar los archivos", Toast.LENGTH_LONG);
                         }
                         if (folderCreated) {
                             byte[] bytes = response.getBody().bytes();

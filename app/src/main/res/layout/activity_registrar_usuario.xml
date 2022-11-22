@@ -171,7 +171,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="10dp"
                                     android:layout_weight="1"
-                                    android:hint="Apellido"
+                                    android:hint="Apellidos"
                                     app:startIconDrawable="@drawable/ic_person">
 
                                     <com.google.android.material.textfield.TextInputEditText
@@ -253,16 +253,16 @@
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <com.google.android.material.textfield.TextInputLayout
-                                    android:id="@+id/txtInputProvincia"
+                                    android:id="@+id/txtInputCiudad"
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:hint="Provincia"
+                                    android:hint="Ciudad"
                                     app:startIconDrawable="@drawable/ic_ubicacion">
 
                                     <AutoCompleteTextView
-                                        android:id="@+id/dropdownProvincia"
+                                        android:id="@+id/dropdownCiudad"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:clickable="true"

@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     toastIncorrecto("Por favor, complete todos los campos.");
                 }
             } catch (Exception e) {
-                toastIncorrecto("Se ha producido un error al intentar loguearte : " + e.getMessage());
+                toastIncorrecto("Se ha producido un error al intentar ingresar : " + e.getMessage());
             }
         });
         txtNuevoUsuario.setOnClickListener(v -> {
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String pref = preferences.getString("UsuarioJson", "");
         if(!pref.equals("")){
-            toastCorrecto("Se detecto una sesión activa, el login será omitido!");
+            toastCorrecto("Se detecto una sesión activa, el login será omitido");
             this.startActivity(new Intent(this, InicioActivity.class));
             this.overridePendingTransition(R.anim.left_in, R.anim.left_out);
         }

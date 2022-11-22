@@ -110,7 +110,7 @@ public class PlatillosCarritoActivity extends AppCompatActivity implements Carri
                 finish();
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
             }else{
-                toastIncorrecto("Demonios ! , No se pudo registrar el pedido");
+                toastIncorrecto("Lo sentimos, No se pudo registrar el pedido");
             }
         });
 

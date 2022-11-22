@@ -90,7 +90,7 @@ public class DetallePlatilloActivity extends AppCompatActivity {
     }
     public void successMessage(String message) {
         new SweetAlertDialog(this,
-                SweetAlertDialog.SUCCESS_TYPE).setTitleText("Buen Trabajo!")
+                SweetAlertDialog.SUCCESS_TYPE).setTitleText("¡Buen Trabajo!")
                 .setContentText(message).show();
     }
 

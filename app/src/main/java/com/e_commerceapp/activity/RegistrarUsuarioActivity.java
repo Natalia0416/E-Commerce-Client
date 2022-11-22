@@ -134,14 +134,14 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         //AutoCompleteTextView
         dropdownTipoDoc = findViewById(R.id.dropdownTipoDoc);
         dropdownDepartamento = findViewById(R.id.dropdownDepartamento);
-        dropdownProvincia = findViewById(R.id.dropdownProvincia);
+        dropdownProvincia = findViewById(R.id.dropdownCiudad);
         //TextInputLayout
         txtInputNameUser = findViewById(R.id.txtInputNameUser);
         txtInputApellidoU = findViewById(R.id.txtInputApellidoU);
         txtInputTipoDoc = findViewById(R.id.txtInputTipoDoc);
         txtInputNumeroDocU = findViewById(R.id.txtInputNumeroDocU);
         txtInputDepartamento = findViewById(R.id.txtInputDepartamento);
-        txtInputProvincia = findViewById(R.id.txtInputProvincia);
+        txtInputProvincia = findViewById(R.id.txtInputCiudad);
         txtInputTelefonoU = findViewById(R.id.txtInputTelefonoU);
         txtInputDireccionU = findViewById(R.id.txtInputDireccionU);
         txtInputEmailUser = findViewById(R.id.txtInputEmailUser);
