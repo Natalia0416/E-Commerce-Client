@@ -54,12 +54,12 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
     private DocumentoAlmacenadoViewModel documentoAlmacenadoViewModel;
     private Button btnSubirImagen, btnGuardarDatos;
     private CircleImageView imageUser;
-    private AutoCompleteTextView dropdownTipoDoc, dropdownDepartamento, dropdownProvincia, dropdownDistrito;
-    private EditText edtNameUser, edtApellidoPaternoU, edtApellidoMaternoU, edtNumDocU, edtTelefonoU,
+    private AutoCompleteTextView dropdownTipoDoc, dropdownDepartamento, dropdownProvincia;
+    private EditText edtNameUser, edtApellidoU, edtNumDocU, edtTelefonoU,
             edtDireccionU, edtPasswordUser, edtEmailUser;
-    private TextInputLayout txtInputNameUser, txtInputApellidoPaternoU, txtInputApellidoMaternoU,
+    private TextInputLayout txtInputNameUser, txtInputApellidoU,
             txtInputTipoDoc, txtInputNumeroDocU, txtInputDepartamento, txtInputProvincia,
-            txtInputDistrito, txtInputTelefonoU, txtInputDireccionU, txtInputEmailUser, txtInputPasswordUser;
+             txtInputTelefonoU, txtInputDireccionU, txtInputEmailUser, txtInputPasswordUser;
     private final static int LOCATION_REQUEST_CODE = 23;
 
     @Override
@@ -84,10 +84,6 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         String[] provincias = getResources().getStringArray(R.array.provincias);
         ArrayAdapter arrayProvincias = new ArrayAdapter(this, R.layout.dropdown_item, provincias);
         dropdownProvincia.setAdapter(arrayProvincias);
-        //LISTA DE DISTRITOS
-        String[] distritos = getResources().getStringArray(R.array.distritos);
-        ArrayAdapter arrayDistritos = new ArrayAdapter(this, R.layout.dropdown_item, distritos);
-        dropdownDistrito.setAdapter(arrayDistritos);
 
     }
 
@@ -129,8 +125,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         btnSubirImagen = findViewById(R.id.btnSubirImagen);
         imageUser = findViewById(R.id.imageUser);
         edtNameUser = findViewById(R.id.edtNameUser);
-        edtApellidoPaternoU = findViewById(R.id.edtApellidoPaternoU);
-        edtApellidoMaternoU = findViewById(R.id.edtApellidoMaternoU);
+        edtApellidoU = findViewById(R.id.edtApellidoU);
         edtNumDocU = findViewById(R.id.edtNumDocU);
         edtTelefonoU = findViewById(R.id.edtTelefonoU);
         edtDireccionU = findViewById(R.id.edtDireccionU);
@@ -140,16 +135,13 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         dropdownTipoDoc = findViewById(R.id.dropdownTipoDoc);
         dropdownDepartamento = findViewById(R.id.dropdownDepartamento);
         dropdownProvincia = findViewById(R.id.dropdownProvincia);
-        dropdownDistrito = findViewById(R.id.dropdownDistrito);
         //TextInputLayout
         txtInputNameUser = findViewById(R.id.txtInputNameUser);
-        txtInputApellidoPaternoU = findViewById(R.id.txtInputApellidoPaternoU);
-        txtInputApellidoMaternoU = findViewById(R.id.txtInputApellidoMaternoU);
+        txtInputApellidoU = findViewById(R.id.txtInputApellidoU);
         txtInputTipoDoc = findViewById(R.id.txtInputTipoDoc);
         txtInputNumeroDocU = findViewById(R.id.txtInputNumeroDocU);
         txtInputDepartamento = findViewById(R.id.txtInputDepartamento);
         txtInputProvincia = findViewById(R.id.txtInputProvincia);
-        txtInputDistrito = findViewById(R.id.txtInputDistrito);
         txtInputTelefonoU = findViewById(R.id.txtInputTelefonoU);
         txtInputDireccionU = findViewById(R.id.txtInputDireccionU);
         txtInputEmailUser = findViewById(R.id.txtInputEmailUser);
@@ -177,7 +169,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
 
             }
         });
-        edtApellidoPaternoU.addTextChangedListener(new TextWatcher() {
+        edtApellidoU.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -185,7 +177,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                txtInputApellidoPaternoU.setErrorEnabled(false);
+                txtInputApellidoU.setErrorEnabled(false);
             }
 
             @Override
@@ -193,22 +185,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
 
             }
         });
-        edtApellidoMaternoU.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                txtInputApellidoMaternoU.setErrorEnabled(false);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
         edtNumDocU.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -305,22 +282,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
 
             }
         });
-        dropdownDistrito.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                txtInputDistrito.setErrorEnabled(false);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
     }
 
     private void guardarDatos() {
@@ -329,13 +291,11 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
             c = new Cliente();
             try {
                 c.setNombres(edtNameUser.getText().toString());
-                c.setApellidoPaterno(edtApellidoPaternoU.getText().toString());
-                c.setApellidoMaterno(edtApellidoMaternoU.getText().toString());
+                c.setApellidoPaterno(edtApellidoU.getText().toString());
                 c.setTipoDoc(dropdownTipoDoc.getText().toString());
                 c.setNumDoc(edtNumDocU.getText().toString());
                 c.setDepartamento(dropdownDepartamento.getText().toString());
                 c.setProvincia(dropdownProvincia.getText().toString());
-                c.setDistrito(dropdownDistrito.getText().toString());
                 c.setTelefono(edtTelefonoU.getText().toString());
                 c.setDireccionEnvio(edtDireccionU.getText().toString());
                 c.setId(0);
@@ -422,8 +382,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         String nombres, apellidoPaterno, apellidoMaterno, numDoc, telefono, direccion, correo, clave,
                 dropTipoDoc, dropDepartamento, dropProvincia, dropDistrito;
         nombres = edtNameUser.getText().toString();
-        apellidoPaterno = edtApellidoPaternoU.getText().toString();
-        apellidoMaterno = edtApellidoMaternoU.getText().toString();
+        apellidoPaterno = edtApellidoU.getText().toString();
         numDoc = edtNumDocU.getText().toString();
         telefono = edtTelefonoU.getText().toString();
         direccion = edtDireccionU.getText().toString();
@@ -432,7 +391,6 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         dropTipoDoc = dropdownTipoDoc.getText().toString();
         dropDepartamento = dropdownDepartamento.getText().toString();
         dropProvincia = dropdownProvincia.getText().toString();
-        dropDistrito = dropdownDistrito.getText().toString();
         if (this.f == null) {
             errorMessage("debe selecionar una foto de perfil");
             retorno = false;
@@ -444,17 +402,12 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
             txtInputNameUser.setErrorEnabled(false);
         }
         if (apellidoPaterno.isEmpty()) {
-            txtInputApellidoPaternoU.setError("Ingresar apellido paterno");
+            txtInputApellidoU.setError("Ingresar apellido paterno");
             retorno = false;
         } else {
-            txtInputApellidoPaternoU.setErrorEnabled(false);
+            txtInputApellidoU.setErrorEnabled(false);
         }
-        if (apellidoMaterno.isEmpty()) {
-            txtInputApellidoMaternoU.setError("Ingresar apellido materno");
-            retorno = false;
-        } else {
-            txtInputApellidoMaternoU.setErrorEnabled(false);
-        }
+
         if (numDoc.isEmpty()) {
             txtInputNumeroDocU.setError("Ingresar número documento");
             retorno = false;
@@ -503,12 +456,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         } else {
             txtInputProvincia.setErrorEnabled(false);
         }
-        if (dropDistrito.isEmpty()) {
-            txtInputDistrito.setError("Seleccionar Distrito");
-            retorno = false;
-        } else {
-            txtInputDistrito.setErrorEnabled(false);
-        }
+
         return retorno;
     }
 

@@ -99,12 +99,11 @@ public class InicioActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        //loadData();
+        loadData();
     }
 
-    @SuppressLint("UnsafeExperimentalUsageError")
-    private void loadData() {
-        /*
+    private void loadData(){
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         final Gson g = new GsonBuilder()
                 .registerTypeAdapter(Date.class, new DateSerializer())
@@ -124,16 +123,16 @@ public class InicioActivity extends AppCompatActivity {
                     .downloader(new OkHttp3Downloader(ConfigApi.getClient()))
                     .build();
             picasso.load(url)
-                    .error(R.drawable.image_not_found)
+                    .error(R.drawable.insertar_imagen)
                     .into(imgFoto);
         }
 
 
-        BadgeDrawable badgeDrawable = BadgeDrawable.create(this);
+        /*BadgeDrawable badgeDrawable = BadgeDrawable.create(this);
         badgeDrawable.setNumber(Carrito.getDetallePedidos().size());
-        BadgeUtils.attachBadgeDrawable(badgeDrawable, findViewById(R.id.toolbar), R.id.bolsaCompras);
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, findViewById(R.id.toolbar), R.id.bolsaCompras);*/
 
-         */
+
     }
 
     //Método para cerrar sesión

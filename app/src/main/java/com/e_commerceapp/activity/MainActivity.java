@@ -191,13 +191,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE).setTitleText("has oprimido el botón atrás")
+        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE).setTitleText("Salir")
                 .setContentText("¿Quieres cerrar la aplicación?")
-                .setCancelText("No, Cancelar!").setConfirmText("Sí, Cerrar")
+                .setCancelText("No").setConfirmText("Sí")
                 .showCancelButton(true).setCancelClickListener(sDialog -> {
                     sDialog.dismissWithAnimation();
                     new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE).setTitleText("Operación cancelada")
-                            .setContentText("No saliste de la app")
                             .show();
                 }).setConfirmClickListener(sweetAlertDialog -> {
                     sweetAlertDialog.dismissWithAnimation();

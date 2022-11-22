@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/san_francisco"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Categorías"
                 android:textColor="#fff"
                 android:textSize="24dp" />
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/san_francisco"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Platillos Recomendados"
                 android:textColor="#fff"
                 android:textSize="24dp" />
@@ -78,8 +78,11 @@
                     android:id="@+id/rcvPlatillosRecomendados"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp" />
 
             </RelativeLayout>
         </LinearLayout>

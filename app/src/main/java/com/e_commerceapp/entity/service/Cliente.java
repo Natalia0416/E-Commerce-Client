@@ -4,14 +4,12 @@ public class Cliente {
 
     private int id;
     private String nombres;
-    private String apellidoPaterno;
-    private String apellidoMaterno;
+    private String apellido;
     private String tipoDoc;
     private String numDoc;
     private String direccionEnvio;
     private String departamento;
     private String provincia;
-    private String distrito;
     private String telefono;
     private DocumentoAlmacenado foto;
 
@@ -70,21 +68,12 @@ public class Cliente {
         this.departamento = departamento;
     }
 
-    public String getProvincia() {
-        return provincia;
-    }
 
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
 
-    public String getDistrito() {
-        return distrito;
-    }
 
-    public void setDistrito(String distrito) {
-        this.distrito = distrito;
-    }
 
     public DocumentoAlmacenado getFoto() {
         return foto;
@@ -94,21 +83,14 @@ public class Cliente {
         this.foto = foto;
     }
 
-    public String getApellidoPaterno() {
-        return apellidoPaterno;
+    public String getApellido() {
+        return apellido;
     }
 
     public void setApellidoPaterno(String apellidoPaterno) {
-        this.apellidoPaterno = apellidoPaterno;
+        this.apellido = apellidoPaterno;
     }
 
-    public String getApellidoMaterno() {
-        return apellidoMaterno;
-    }
-
-    public void setApellidoMaterno(String apellidoMaterno) {
-        this.apellidoMaterno = apellidoMaterno;
-    }
 
     public String getTelefono() {
         return telefono;
@@ -119,7 +101,7 @@ public class Cliente {
     }
 
     public String getNombreCompleto(){
-        return this.nombres != null && this.apellidoPaterno != null && this.apellidoMaterno != null ?
-                this.nombres + " " + this.apellidoPaterno + " " + this.apellidoMaterno : "------";
+        return this.nombres != null && this.apellido != null ?
+                this.nombres + " " + this.apellido : "------";
     }
 }
